@@ -19,7 +19,7 @@ li{
 
 <ul>
 	<?php
-		$dirname = "images/";
+		$dirname = "img/";
 		$images = scandir($dirname);
 		shuffle($images);
 		$ignore = array(".", "..");
