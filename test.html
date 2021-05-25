@@ -95,45 +95,21 @@ body {
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<script>
   
-var bCheckEnabled = true;
-var bFinishCheck = false;
-
-var img;
-var imgArray = new Array();
-var i = 0;
-
-var myInterval = setInterval(loadImage, 1);
-
-function loadImage() {
-
-    if (bFinishCheck) {
-        clearInterval(myInterval);
-        alert('Loaded ' + i + ' image(s)!)');
-        return;
-    }
-
-    if (bCheckEnabled) {
-
-        bCheckEnabled = false;
-
-        img = new Image();
-        img.onload = fExists;
-        img.onerror = fDoesntExist;
-        img.src = 'img/ + i + '.jpg';
-
-    }
-
+var index = 1;
+var tempImg = new Image();
+tempImg.onload = function(){
+   appendImage();
 }
-
-function fExists() {
-    imgArray.push(img);
-    i++;
-    bCheckEnabled = true;
+var tryLoadImage = function( index ){
+   tempImg.src = 'img/' + index + '.jpg';
 }
-
-function fDoesntExist() {
-    bFinishCheck = true;
+var appendImage = function(){
+   var img = document.createElement('img');
+   img.src = tempImg.src;
+   document.body.appendChild( img )
+   tryLoadImage( index++ )
 }
+tryLoadImage( index );
 	</script>
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~-->
   
