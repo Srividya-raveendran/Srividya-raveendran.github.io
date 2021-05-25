@@ -91,25 +91,50 @@ body {
   <img id="expandedImg" style="width:100%">
   <div id="imgtext"></div>
 </div>
+	
+	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   
- 
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  
-  <script type="text/javascript">
-    var folder = "img"; //TODO: change this to the path to your folder with the images.
-    $.ajax({
-        url: folder,
-        success: function(data) {
-            $(data).find("a").attr("href", function(i, val) {
-                $("body").append("<img src='" + folder + '/' + val + "'>");
-            });
-        }
-    });
-    
-</script>
+var bCheckEnabled = true;
+var bFinishCheck = false;
+
+var img;
+var imgArray = new Array();
+var i = 0;
+
+var myInterval = setInterval(loadImage, 1);
+
+function loadImage() {
+
+    if (bFinishCheck) {
+        clearInterval(myInterval);
+        alert('Loaded ' + i + ' image(s)!)');
+        return;
+    }
+
+    if (bCheckEnabled) {
+
+        bCheckEnabled = false;
+
+        img = new Image();
+        img.onload = fExists;
+        img.onerror = fDoesntExist;
+        img.src = 'img/ + i + '.jpg';
+
+    }
+
+}
+
+function fExists() {
+    imgArray.push(img);
+    i++;
+    bCheckEnabled = true;
+}
+
+function fDoesntExist() {
+    bFinishCheck = true;
+}
+	
+	<!--~~~~~~~~~~~~~~~~~~~~~~~~-->
   
   
 
