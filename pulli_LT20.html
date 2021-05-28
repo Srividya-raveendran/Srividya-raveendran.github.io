@@ -6,11 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Ramani's Kolangal</title>
     <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
+	<style>
+		body {
+	background-color: #fff3f3;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#gallery {
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+#gallery img {
+	width: 100px;
+	height: 100px;
+	margin: 5px;
+	border: 2px solid #000;
+
+}
+
+#gallery img:hover {
+box-shadow: 5px 5px 2px 1px #000;
+}
+
+#single {
+	background-color: #000;
+}
+header {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	background-color: #2f2f2f;
+	color: #fff;
+	font-size: 25px;
+	font-style: italic;
+	border-top: 3px solid #000;
+	border-bottom: 3px solid #000;
+		}</style>
+	
 </head>
 <body>
 	<div style="text-align:center">
 		<h2>Pulli Kolangal (<20 Dots) </h2>
 	</div>
+		<section id='main'>
+		<header>
+			<h1>Gallery With Thumbnails</h1>
+		</header>
+		<div id='gallery'>
+		</div>
+	</section>
+			
 	<!--
 	<div class="row">
 		<div class="column">
@@ -45,10 +95,11 @@
 	  		expandImg.parentElement.style.display = "block";
 		}
 	</script>
-        <script>
+        <!--<script>
   		var index = 1;
 		var tempImg = new Image();
-		const image = document.getElementById("im_x");
+		document.getElementById("img").onclick = function() {myFunction(img)};
+
 
 		tempImg.onload = function(){
 		   appendImage();
@@ -59,16 +110,37 @@
 		var appendImage = function(){
 		   var img = document.createElement('img');
 		   img.src = tempImg.src;
-			var v  document.getElementById('img');;
-			v.classList.add("row");
-		        v.classList.add("column");	
-			v = document.body.appendChild( img );
-		   
-	
+		   document.body.appendChild( img );
 		   tryLoadImage( index++ );
 		}
 		tryLoadImage(index);
-	</script>
+	</script>-->
+		
+						(function() { //Create the div that holds images 'gallery' ... Create img elements for each thumbnail
+					var width = window.innerWidth; //Getting width of client viewport
+					var totalWidth = width / 110; //Divisor is total size of image thumbnail (with margins) 
+					document.getElementById('gallery').style.width = totalWidth; //Setting width of gallery to the number of thumbnail images
+					var numImg = 11 + -1;  //Total number of images
+
+					var gallery = document.getElementById('gallery'); //The element to append the images to
+					var main = document.getElementById('main');
+
+					function fullSize(imgToShow) { //onClick function for thumbnails ... Shows full size image
+						var fullImgContainer = document.createElement('div');
+						fullImgContainer.id = 'single'; //div that holds the fullsized image
+						main.appendChild(fullImgContainer);
+						var img = document.createElement('img');
+						img.id = 'full';
+						img.src = imgToShow;
+						fullImgContainer.appendChild(img)
+					}
+					for (var i=1; i < numImg; i++) {  //Create image elements
+						var img = document.createElement('img'); 
+						img.src = 'img/LT10_' +  i + '.jpg';
+						img.setAttribute('onClick', fullSize('gallery-images/anime' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
+						gallery.appendChild(img);
+					}
+				})();
 </body>
 </html>
 
