@@ -138,7 +138,7 @@ header {
 					for (var i=1; i < numImg; i++) {  //Create image elements
 						var img = document.createElement('img'); 
 						img.src = 'img/LT10_' +  i + '.jpg';
-						img.setAttribute('onClick', fullSize('gallery-images/anime' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
+						img.setAttribute('onClick', fullSize('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
 						gallery.appendChild(img);
 					}
 				})();
