@@ -59,14 +59,12 @@
 		var appendImage = function(){
 		   var img = document.createElement('img');
 		   img.src = tempImg.src;
-		   x =  document.body.appendChild( img );
-		   image.src = x.textContent;
-			
-		<div class="row">
-		<div class="column">
-			<img src=""  id = "im_x" style="width:100%" onclick="myFunction(this);">
-		</div>
-		   </div>
+			var v;
+			v.classList.add("row");
+		       v.classList.add("column");	
+			 v = document.body.appendChild( img );
+		   
+	
 		   tryLoadImage( index++ );
 		}
 		tryLoadImage(index);
