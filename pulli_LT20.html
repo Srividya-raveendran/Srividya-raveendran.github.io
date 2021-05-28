@@ -48,6 +48,8 @@
         <script>
   		var index = 1;
 		var tempImg = new Image();
+		const image = document.getElementById("im_x");
+
 		tempImg.onload = function(){
 		   appendImage();
 		}
@@ -58,14 +60,14 @@
 		   var img = document.createElement('img');
 		   img.src = tempImg.src;
 		   x =  document.body.appendChild( img );
-		   document.getElementById('im_x').src = x.textContent;
+		   image.src = x.textContent;
 			
 		<div class="row">
 		<div class="column">
 			<img src=""  id = "im_x" style="width:100%" onclick="myFunction(this);">
 		</div>
 		   </div>
-		   tryLoadImage( index++ )
+		   tryLoadImage( index++ );
 		}
 		tryLoadImage(index);
 	</script>
