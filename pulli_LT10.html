@@ -23,11 +23,44 @@ body {
 </style>-->
 </head>
 <body>
+	<div style="text-align:center">
+		<h2>Pulli Kolangal (<10 Dots) </h2>
+	</div>
+	
+	<div class="row">
+		<div class="column">
+			<img src="img/1.jpg" style="width:100%" view=Fit onclick="myFunction(this);">
+		</div>
+		<div class="column">
+			<img src="img/2.jpg" style="width:100%" view=Fit onclick="myFunction(this);">
+		</div>
+		<div class="column">
+		    	<img src="img/3.jpg" style="width:100%" view=Fit onclick="myFunction(this);">
+		</div>
+		<div class="column">
+		    	<img src="img/4.jpg"style="width:100%" view=Fit onclick="myFunction(this);">
+		</div>
+		<div class="column">
+		    	<img src="img/5.jpg"style="width:100%" view=Fit onclick="myFunction(this);">
+		</div>
+	</div>
 
-<div style="text-align:center">
-  <h2>Pulli Kolangal</h2>
-</div>
-	testfun();
+	<div class="container">
+		<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+	  	<img id="expandedImg" style="width:100%">
+	  	<div id="imgtext"></div>
+	</div>
+	
+	<script>
+		function myFunction(imgs) {
+	  		var expandImg = document.getElementById("expandedImg");
+	 		var imgText = document.getElementById("imgtext");
+	  		expandImg.src = imgs.src;
+	  		imgText.innerHTML = imgs.alt;
+	  		expandImg.parentElement.style.display = "block";
+		}
+	</script>
+	
 	<!--<div class="container">	
 	<div class="main">
 				
@@ -125,11 +158,6 @@ body {
   </div>
 </div>-->
 
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
-</div>
 	
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <script>
@@ -151,53 +179,15 @@ var appendImage = function(){
 tryLoadImage( index );
 	</script>
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="assets/js/grid.js"></script>
 		<script>
 			$(function() {
 				Grid.init();
 			});
-		</script>
+		</script>-->
   
 
-<script>
-function myFunction(imgs) {
-  var expandImg = document.getElementById("expandedImg");
-  var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
-  expandImg.parentElement.style.display = "block";
-}
-</script>
-<script>
-	function testfun()
-	{
-		var categ1 = parent.document.getElementById('LT10').id;
-		var categ2 = parent.document.getElementById('LT20').id;
-		var categ3 = parent.document.getElementById('LT30').id;
-		
-		if (categ1 == "LT10")
-		{
-			<div class="row">
-						  <div class="column">
-						    <img src="img/1.jpg" style="width:100%" onclick="myFunction(this);">
-						  </div>
-			</div>
-		}
-		
-		if (categ2 == "LT20")
-		{
-			<div class="row">
-						  <div class="column">
-						    <img src="img/2.jpg" style="width:100%" onclick="myFunction(this);">
-						  </div>
-			</div>
-		}
-	}
-	</script>
 
-		
-	
-	
 </body>
 </html>
