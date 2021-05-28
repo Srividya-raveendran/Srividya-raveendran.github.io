@@ -57,8 +57,8 @@
 		var appendImage = function(){
 		   var img = document.createElement('img');
 		   img.src = tempImg.src;
-		   
-		 document.getElementById('im_x').src =  document.body.appendChild( img );
+		   x =  document.body.appendChild( img );
+		   document.getElementById('im_x').src = x.textContent;
 			
 		<div class="row">
 		<div class="column">
