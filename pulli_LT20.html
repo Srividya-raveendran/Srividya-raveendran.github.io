@@ -57,9 +57,10 @@
 		var appendImage = function(){
 		   var img = document.createElement('img');
 		   img.src = tempImg.src;
+		   x = document.body.appendChild( img )
 		<div class="row">
 		<div class="column">
-			<img src=document.body.appendChild( img ) style="width:100%" onclick="myFunction(this);">
+			<img src= x.textContent  style="width:100%" onclick="myFunction(this);">
 		</div>
 		   </div>
 		   tryLoadImage( index++ )
