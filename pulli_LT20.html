@@ -46,7 +46,7 @@
 		}
 	</script>
         <script>
-  		var index = 0;
+  		var index = 1;
 		var tempImg = new Image();
 		tempImg.onload = function(){
 		   appendImage();
@@ -57,7 +57,11 @@
 		var appendImage = function(){
 		   var img = document.createElement('img');
 		   img.src = tempImg.src;
-		   document.body.appendChild( img )
+		<div class="row">
+		<div class="column">
+			<img src=document.body.appendChild( img ) style="width:100%" onclick="myFunction(this);">
+		</div>
+		   </div>
 		   tryLoadImage( index++ )
 		}
 		tryLoadImage(index);
