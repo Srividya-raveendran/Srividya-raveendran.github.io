@@ -101,7 +101,7 @@
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01">
-  <div id="caption"></div>
+  
 </div>
 
 			
@@ -175,14 +175,15 @@
 
 
 function myFunction_modal(imgs){
+  
   modal.style.display = "block";
   modalImg.src = imgs.target.src;
+}
 	var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() { 
   modal.style.display = "none";
-}
 }
 			// Get the <span> element that closes the modal
 
