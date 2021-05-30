@@ -15,6 +15,14 @@
 			<div class="column" id="column">
 			</div>
 		</div>
+		
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
 			
 		<!--<section id='main'>
 		<header>
@@ -59,6 +67,45 @@
 	  		expandImg.parentElement.style.display = "block";
 		}
 	</script>
+		
+		<script>
+			(function() {
+			var modal = document.getElementById("myModal");
+			var numImg = 12 + -1;  //Total number of images
+			var modalImg = document.getElementById("img01");
+			var rowtype = document.getElementById("row"); //The element to append the images to
+			var coltype = document.getElementById("column");
+			rowtype.appendChild(coltype);
+					
+			//document.getElementById("img").style.display = "none";
+			for (var i=1; i < numImg; i++) {  //Create image elements
+				var img = document.createElement("img"); 
+				img.src = 'img/LT10_' +  i + '.jpg';
+				img.id = 'img-' + i;
+				//img.setAttribute('index', i);
+  				//img.addEventListener("click", myFunction)
+				rowtype.appendChild(img);
+				
+				
+				
+				
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+
+
+			img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+}
+			// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}})();
+			</script>
+		
         <!--<script>
   		var index = 1;
 		var tempImg = new Image();
