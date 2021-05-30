@@ -93,9 +93,9 @@
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 
 
-myFunction_modal(){
+myFunction_modal(imgs){
   modal.style.display = "block";
-  modalImg.src = this.src;
+  modalImg.src = imgs.target.src;
 }
 			// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
