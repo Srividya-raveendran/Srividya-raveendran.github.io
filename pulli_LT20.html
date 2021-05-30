@@ -163,7 +163,12 @@ header {
 					for (var i=1; i < numImg; i++) {  //Create image elements
 						var img = document.createElement("img"); 
 						img.src = 'img/LT10_' +  i + '.jpg';
-						img.setAttribute('onClick', myFunction('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
+						
+						img.id = 'img-' + i;
+  						img.setAttribute('index', i);
+  						img.addEventListener("click", myFunction)
+						
+						//img.setAttribute('onClick', myFunction('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
 						rowtype.appendChild(img)
 					}
 					//document.getElementById("img").onclick = function() {myFunction(this)};
