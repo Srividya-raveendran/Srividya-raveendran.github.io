@@ -83,9 +83,9 @@
 				img.src = 'img/LT10_' +  i + '.jpg';
 				img.id = 'img-' + i;
 				//img.setAttribute('index', i);
-  				//img.addEventListener("click", myFunction)
+  				img.addEventListener("click", myFunction_modal)
 				rowtype.appendChild(img);
-			}
+			}})();
 				
 				
 				
@@ -93,7 +93,7 @@
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 
 
-			img.onclick = function(){
+myFunction_modal(){
   modal.style.display = "block";
   modalImg.src = this.src;
 }
@@ -103,7 +103,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() { 
   modal.style.display = "none";
-}})();
+}
 			</script>
 		
         <!--<script>
