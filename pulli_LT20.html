@@ -95,7 +95,8 @@ header {
 		function myFunction(imgs) {
 	  		var expandImg = document.getElementById("expandedImg");
 	 		var imgText = document.getElementById("imgtext");
-	  		expandImg.src = imgs.src;
+			var imgId = imgs.target.id
+	  		expandImg.src = imgs.target.src;
 	  		imgText.innerHTML = imgs.alt;
 	  		expandImg.parentElement.style.display = "block";
 		}
