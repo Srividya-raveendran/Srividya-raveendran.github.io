@@ -55,7 +55,7 @@
 	 		var imgText = document.getElementById("imgtext");
 			var imgId = imgs.target.id
 	  		expandImg.src = imgs.target.src;
-	  		imgText.innerHTML = imgs.alt;
+	  		//imgText.innerHTML = imgs.alt;
 	  		expandImg.parentElement.style.display = "block";
 		}
 	</script>
@@ -127,7 +127,7 @@
   						img.addEventListener("click", myFunction)
 						//img.id = 'img-' + i;
 						//rowtype.appendChild(coltype);
-						coltype.appendChild(img);
+						rowtype.appendChild(img);
   						
 						
 						//img.setAttribute('onClick', myFunction('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
