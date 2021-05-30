@@ -11,8 +11,8 @@
 	<div style="text-align:center">
 		<h2>Pulli Kolangal (<20 Dots) </h2>
 	</div>
-		<div class="row" id = "row">
-			<div class="column" id = "column">
+		<div class="row">
+			<div class="column">
 			</div>
 		</div>
 			
@@ -115,10 +115,8 @@
 					//document.getElementById('gallery').style.width = totalWidth; //Setting width of gallery to the number of thumbnail images
 					var numImg = 11 + -1;  //Total number of images
 
-					var rowtype = document.getElementById("row"); //The element to append the images to
-					var coltype = document.getElementById("column");
-					
-					var colt = $('#row #column').style;
+					var rowtype = document.getElementsByClassName("row"); //The element to append the images to
+					var coltype = document.getElementsByClassName("column");
 					
 					rowtype.appendChild(coltype);
 					//document.getElementById("img").style.display = "none";
@@ -131,7 +129,7 @@
   						//img.addEventListener("click", myFunction)
 						
 						//img.setAttribute('onClick', myFunction('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
-						colt.appendChild(img)
+						coltype.appendChild(img)
 						
 					}
 					//document.getElementById("img").onclick = function() {myFunction(this)};
