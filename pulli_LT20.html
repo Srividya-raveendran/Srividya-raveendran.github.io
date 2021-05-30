@@ -164,17 +164,17 @@
 				img.src = 'img/LT10_' +  i + '.jpg';
 				img.id = 'img-' + i;
 				//img.setAttribute('index', i);
-  				//img.addEventListener("click", myFunction_modal)
-				img.onclick = myFunc_model(img);
+  				img.addEventListener("click", myFunction_modal)
+				//img.onclick = myFunc_model(img);
 				rowtype.appendChild(img);
 			}
 			
 			
 			})();
 				
-				function myFunc_model(imgs){
+				function myFunction_modal(imgs){
   					modal.style.display = "block";
- 					modalImg.src = imgs.src;
+ 					modalImg.src = imgs.target.src;
  
 					}
 				
