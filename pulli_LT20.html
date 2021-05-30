@@ -53,8 +53,8 @@ header {
 	<div style="text-align:center">
 		<h2>Pulli Kolangal (<20 Dots) </h2>
 	</div>
-		<div class="row" id = 'row'>
-			<div class="column" id = 'column'>
+		<div class="row" id = "row">
+			<div class="column" id = "column">
 			</div>
 		</div>
 			
@@ -156,15 +156,16 @@ header {
 					//document.getElementById('gallery').style.width = totalWidth; //Setting width of gallery to the number of thumbnail images
 					var numImg = 11 + -1;  //Total number of images
 
-					var row = document.getElementById('row'); //The element to append the images to
-					var col = document.getElementById('column');
-					document.getElementById("img").onclick = function() {myFunction(img)};
+					var rowtype = document.getElementById("row"); //The element to append the images to
+					var coltype = document.getElementById("column");
+					
 					for (var i=1; i < numImg; i++) {  //Create image elements
-						var img = document.createElement('img'); 
+						var img = document.createElement("img"); 
 						img.src = 'img/LT10_' +  i + '.jpg';
 						//img.setAttribute('onClick', myFunction('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
-						gallery.appendChild(img);
+						coltype.appendChild(img);
 					}
+					document.getElementById("img").onclick = function() {myFunction(img)};
 				})();
 		</script>
 </body>
