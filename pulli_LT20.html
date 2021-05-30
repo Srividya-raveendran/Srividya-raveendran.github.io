@@ -53,13 +53,18 @@ header {
 	<div style="text-align:center">
 		<h2>Pulli Kolangal (<20 Dots) </h2>
 	</div>
-		<section id='main'>
+		<div class="row" id = 'row'>
+			<div class="column" id = 'column'>
+			</div>
+		</div>
+			
+		<!--<section id='main'>
 		<header>
 			<h1>Gallery With Thumbnails</h1>
 		</header>
 		<div id='gallery'>
 		</div>
-	</section>
+	</section>-->
 			
 	<!--
 	<div class="row">
@@ -115,7 +120,7 @@ header {
 		}
 		tryLoadImage(index);
 	</script>-->
-		<script>
+		<!--<script>
 		
 						(function() { //Create the div that holds images 'gallery' ... Create img elements for each thumbnail
 					var width = window.innerWidth; //Getting width of client viewport
@@ -139,6 +144,25 @@ header {
 						var img = document.createElement('img'); 
 						img.src = 'img/LT10_' +  i + '.jpg';
 						img.setAttribute('onClick', fullSize('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
+						gallery.appendChild(img);
+					}
+				})();
+		</script>-->
+		
+		<script>
+				(function() { //Create the div that holds images 'gallery' ... Create img elements for each thumbnail
+					//var width = window.innerWidth; //Getting width of client viewport
+					//var totalWidth = width / 110; //Divisor is total size of image thumbnail (with margins) 
+					//document.getElementById('gallery').style.width = totalWidth; //Setting width of gallery to the number of thumbnail images
+					var numImg = 11 + -1;  //Total number of images
+
+					var row = document.getElementById('row'); //The element to append the images to
+					var col = document.getElementById('column');
+					document.getElementById("img").onclick = function() {myFunction(img)};
+					for (var i=1; i < numImg; i++) {  //Create image elements
+						var img = document.createElement('img'); 
+						img.src = 'img/LT10_' +  i + '.jpg';
+						//img.setAttribute('onClick', myFunction('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
 						gallery.appendChild(img);
 					}
 				})();
