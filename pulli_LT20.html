@@ -113,12 +113,12 @@
 					//var width = window.innerWidth; //Getting width of client viewport
 					//var totalWidth = width / 110; //Divisor is total size of image thumbnail (with margins) 
 					//document.getElementById('gallery').style.width = totalWidth; //Setting width of gallery to the number of thumbnail images
-					var numImg = 11 + -1;  //Total number of images
+					var numImg = 12 + -1;  //Total number of images
 
 					var rowtype = document.getElementById("row"); //The element to append the images to
 					var coltype = document.getElementById("column");
 					
-					//rowtype.appendChild(coltype);
+					
 					//document.getElementById("img").style.display = "none";
 					for (var i=1; i < numImg; i++) {  //Create image elements
 						var img = document.createElement("img"); 
@@ -127,9 +127,10 @@
 						img.id = 'img-' + i;
   						//img.setAttribute('index', i);
   						//img.addEventListener("click", myFunction)
-						
+						coltype.appendChild(img)
+						rowtype.appendChild(coltype);
 						//img.setAttribute('onClick', myFunction('img/LT10_' +  i + '.jpg')); //Why is fullSize() getting executed every loop?
-						rowtype.appendChild(img)
+						
 						
 					}
 					//document.getElementById("img").onclick = function() {myFunction(this)};
