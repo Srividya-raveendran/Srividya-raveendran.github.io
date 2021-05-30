@@ -165,14 +165,18 @@
 				img.id = 'img-' + i;
 				//img.setAttribute('index', i);
   				//img.addEventListener("click", myFunction_modal)
+				img.onclick = myFunc_model(img);
 				rowtype.appendChild(img);
-			}})();
+			}
+			
+			
+			})();
 				
-				img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = img.src;
+				function myFunc_model(imgs){
+  					modal.style.display = "block";
+ 					modalImg.src = imgs.src;
  
-}
+					}
 				
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
